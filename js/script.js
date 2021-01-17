@@ -16,18 +16,22 @@ $(document).ready(function () {
         }
     });
 
+    $("#smartwizard").on("showStep", function (e, anchorObject, stepIndex, stepDirection) {
+        switch (stepIndex) {
+            case 1:
+                loadStep2();
+                break;
+            default:
+                break;
+        }
+    });
+
     $("#smartwizard").on("leaveStep", function (e, anchorObject, currentStepIndex, nextStepIndex, stepDirection) {
         let shouldAdvanceStep = true;
 
         switch (currentStepIndex) {
-            case 0:
-                loadStep2();
-                break;
             case 1:
                 shouldAdvanceStep = chooseNextParticipant();
-                break;
-            case 2:
-                loadStep3();
                 break;
             default:
                 break;
@@ -35,7 +39,6 @@ $(document).ready(function () {
 
         return shouldAdvanceStep;
     });
-
 });
 
 var participants = [];
