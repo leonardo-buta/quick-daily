@@ -17,11 +17,8 @@
 </head>
 
 <body>
-
     <div class="container">
-
         <div id="smartwizard">
-
             <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link" href="#step-1">
@@ -39,22 +36,24 @@
                     </a>
                 </li>
             </ul>
-
             <div class="tab-content" style="width: 70vh;">
                 <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1">
                     <h3>Participantes (um por linha)</h3>
-                    <textarea id="w3review" rows="8" style="width: 100%;">
-                        Pessoa 1
-                        Pessoa 2
-                    </textarea>
+                    <textarea id="participants" rows="8" style="width: 100%;"></textarea>
                 </div>
                 <div id="step-2" class="tab-pane" role="tabpanel" aria-labelledby="step-2">
                     <h3>O próximo participante é...</h3>
-                    <div id="currentParticipant"></div>
+                    <mark><label id="currentParticipant"></label></mark>
+                    <br>
+                    <br>
+                    <div class="stopwatch">
+                        <label>Tempo:</label>
+                        <span class="time" id="display">00:00:00</span>
+                    </div>
                 </div>
                 <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3">
                     <h3>Resumo da daily:</h3>
-                    <table id="results">
+                    <table id="results" class="styled-table">
                         <thead>
                             <tr>
                                 <th>Participante</th>
@@ -63,12 +62,12 @@
                         </thead>
                         <tbody></tbody>
                     </table>
+                    <h3 id="totalTime">Tempo total da daily:</h3>
+                    <h3></h3>
                 </div>
             </div>
         </div>
-
     </div>
-
 </body>
 
 </html>
